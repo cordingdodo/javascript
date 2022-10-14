@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트 07 - 반복문과 배열 그리고 객체</title>
+</head>
+<body>
+    <script>
+    //반복문: 조건이 만족하는 동안 반복 실행
+    //while, do~while, for, for~in, for~of
+    var i = 0;
+    var hap = 0;
+    while(i<10){
+        console.log(i);
+        i++;
+        hap+=i;
+    }
+    console.log(hap);
+
+    /*
+    반복변수선언 및 초기화
+    while(조건식){
+        반복실행할 문장;
+        반복변수증감식;
+    }
+    조건식이 항상 만족할 경우는 무한루프!
+    */
+   j = 0;
+   tot = 0;
+    do {
+        if(j>=10) break;
+        document.write(j+"<br>");
+        if(j%2==0) tot+=j;
+        j++;
+   } while(j<=1000);
+   document.write("합산결과 : "+tot);
+
+   /*
+   do ~ while ~ : 최소 1회 이상 실행을 해야 하는 경우
+   반복 변수의 선언 및 초기화
+   do {
+    반복 실행 문장;
+    반복 변수 증감;
+   } while(조건식); */
+    var arr = [80,50,60,70,90]; //배열
+    var arr2 = [[80,60,70],[40,30,70],[80,60,90],[70,60,55]];
+    var obj = {num:1, name:"김도연", point:90}; //객체
+   //var data = {name: "김도도", point:[80,70.60]}; 가눙함!
+    for(var i=0;i<arr.length;i++){
+        document.write(arr[i]+"<br>");
+    }
+
+    /*
+    for(초기값할당;조건식;증감식) {반복실행할 구문;}*/arr
+    
+    for(var i in arr){ //arr이 가진 갯수만큼 //배열의 순회 - i:index
+        document.write(i+"<br>");
+    } 
+
+    for(var i in obj){ //객체의 순회 - i: key (속성이 되는 것임, property)
+        document.write(i+":"+obj[i]+"<br>");
+    }
+    
+    /*
+    for~in문
+    for(var 변수명 in 배열 또는 객체명){ 변수명에는 처음부터 까지의 요소에 해당하는 인덱스 or 키 순회함
+        반복실행할 문장; }
+    */
+
+    for(var i of arr){ //of 배열의 값 순회함 - i:value
+        document.write(i+"<br>");
+    }
+
+    /*
+    for~of문
+    for(var 변수명 of 배열명){ //변수명에 교대로 해당 배열의 모든 요소를 가져옴
+        반복실행할 문장; }
+    */
+    </script>
+</body>
+</html>
